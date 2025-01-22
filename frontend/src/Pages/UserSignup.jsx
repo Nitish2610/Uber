@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 const UserSignup = () => {
   const [ email, setEmail ] = useState('')
@@ -7,6 +8,9 @@ const UserSignup = () => {
   const [ firstName, setFirstName ] = useState('')
   const [ lastName, setLastName ] = useState('')
   const [ userData, setUserData ] = useState({})
+
+  const navigate = useNavigate();
+
   const submithandler = (e)=>{
     e.preventDefault();
     const newUserData = {
@@ -82,7 +86,7 @@ const UserSignup = () => {
             }}
           />
           <button className="bg-[#111] text-white font-semibold mb-3 rounded border px-4 py-2 w-full text-lg">
-            Login
+            Create Account
           </button>
           </form>
           <p className="text-center mb-2">ALready have an account?<Link to='/login' className="text-blue-600">Login here</Link></p>
