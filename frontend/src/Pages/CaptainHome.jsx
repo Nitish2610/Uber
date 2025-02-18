@@ -7,8 +7,8 @@ import gsap from "gsap";
 import ConfirmRidePopUp from "../Components/ConfirmRidePopUp";
 
 const CaptainHome = () => {
-  const [ridePopupPanel,setRidePopupPanel] = useState(true);
-  const [confirmRidePopupPanel,setConfirmRidePopupPanel] = useState(false);
+  const [ridePopupPanel, setRidePopupPanel] = useState(true);
+  const [confirmRidePopupPanel, setConfirmRidePopupPanel] = useState(false);
   const ridePopupPanelRef = useRef(null);
   const confirmRidePopupPanelRef = useRef(null);
 
@@ -25,9 +25,13 @@ const CaptainHome = () => {
   useGSAP(
     function () {
       if (confirmRidePopupPanel) {
-        gsap.to(confirmRidePopupPanelRef.current, { transform: "translateY(0%)" });
+        gsap.to(confirmRidePopupPanelRef.current, {
+          transform: "translateY(0%)",
+        });
       } else {
-        gsap.to(confirmRidePopupPanelRef.current, { transform: "translateY(100%)" });
+        gsap.to(confirmRidePopupPanelRef.current, {
+          transform: "translateY(100%)",
+        });
       }
     },
     [confirmRidePopupPanel]
@@ -55,19 +59,25 @@ const CaptainHome = () => {
         />
       </div>
       <div className="h-2/5 p-6">
-        <CaptainDetails/>
+        <CaptainDetails />
       </div>
       <div
-      ref={ridePopupPanelRef}
+        ref={ridePopupPanelRef}
         className="fixed z-10 w-full bottom-0 bg-white px-3 py-10 pt-12 translate-y-full"
       >
-        <RidePopUp setRidePopupPanel={setRidePopupPanel} setConfirmRidePopupPanel={setConfirmRidePopupPanel}/>
+        <RidePopUp
+          setRidePopupPanel={setRidePopupPanel}
+          setConfirmRidePopupPanel={setConfirmRidePopupPanel}
+        />
       </div>
       <div
-      ref={confirmRidePopupPanelRef}
+        ref={confirmRidePopupPanelRef}
         className="fixed z-10 w-full bottom-0 h-screen bg-white px-3 py-10 pt-12 translate-y-full"
       >
-        <ConfirmRidePopUp setConfirmRidePopupPanel={setConfirmRidePopupPanel} setRidePopupPanel={setRidePopupPanel}/>
+        <ConfirmRidePopUp
+          setConfirmRidePopupPanel={setConfirmRidePopupPanel}
+          setRidePopupPanel={setRidePopupPanel}
+        />
       </div>
     </div>
   );

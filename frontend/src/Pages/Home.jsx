@@ -20,8 +20,8 @@ const Home = () => {
   const waitingForDriverRef = useRef(null);
   const [vechiclePanel, setVechiclePanel] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
- const [vechicleFound, setVechicleFound] = useState(false);
-  const [waitingForDriver,setWaitingForDriver] =useState(false);
+  const [vechicleFound, setVechicleFound] = useState(false);
+  const [waitingForDriver, setWaitingForDriver] = useState(false);
 
   const submithandler = (e) => {
     e.preventDefault();
@@ -160,11 +160,17 @@ const Home = () => {
           setVechicleFound={setVechicleFound}
         />
       </div>
-      <div ref={vechicleFoundRef} className="fixed z-10 w-full bottom-0 bg-white px-3 py-6 pt-12 translate-y-full">
-        <LookingForDriver setVechicleFound={setVechicleFound}/>
+      <div
+        ref={vechicleFoundRef}
+        className="fixed z-10 w-full bottom-0 bg-white px-3 py-6 pt-12 translate-y-full"
+      >
+        <LookingForDriver setVechicleFound={setVechicleFound} />
       </div>
-      <div ref={waitingForDriverRef} className="fixed z-10 w-full bottom-0 bg-white px-3 py-6 pt-12 translate-y-full">
-        <WaitingForDriver waitingForDriver={setWaitingForDriver}/>
+      <div
+        ref={waitingForDriverRef}
+        className="fixed z-10 w-full bottom-0 bg-white px-3 py-6 pt-12 translate-y-full"
+      >
+        <WaitingForDriver waitingForDriver={setWaitingForDriver} />
       </div>
     </div>
   );
